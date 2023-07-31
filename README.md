@@ -41,7 +41,7 @@ This model eliminated the need for recurrence and convolution, which were the do
     </tr>
 </table>
 
-<h2>Attention Mechanism<h2>
+<h2>Attention Mechanism</h2>
 Attention Mechanism consists of following parts:
 <h3>1. Self-Attention Module<h3>
 Sentence is fed to a computer, and it considers each word as a token t, and each token has a word embedding V with shape [vocub_size, model_dimension]. But these word embeddings have no context. So the idea is to apply some kind of weighing or similarity to obtain final word embedding Y, which has more context than the initial embedding V.
