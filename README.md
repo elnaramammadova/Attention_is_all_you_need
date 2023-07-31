@@ -43,7 +43,7 @@ This model eliminated the need for recurrence and convolution, which were the do
 
 <h2>Attention Mechanism</h2>
 Attention Mechanism consists of following parts:
-<h3>1. Self-Attention Module<h3>
+<h3>1. Self-Attention Module</h3>
 Sentence is fed to a computer, and it considers each word as a token t, and each token has a word embedding V with shape [vocub_size, model_dimension]. But these word embeddings have no context. So the idea is to apply some kind of weighing or similarity to obtain final word embedding Y, which has more context than the initial embedding V.
 
 - first find the weights by multiplying (dot product) the initial embedding of the first word with the embedding of all other words in the sentence. 
@@ -54,5 +54,13 @@ All weights will have the context of the first word. So when we are multiplying 
 
 Weights are not trained, the order or proximity of the words have no influence on each other. Also, the process has no dependency on the length of the sentence, that is, more or fewer words in a sentence do not matter. This approach of adding some context to the words in a sentence is known as Self-Attention.
 
-- Multihead Attention Module
-- Position-Wise Feed-Forward Module
+Since weights are not trained, we utilize three other trainable parameters which are matrices whose values are trained: 
+- Query: send V1 as the Query word - $xMk$
+- Key: dot product between the query (the first word embedding) and all other words obtain weights - $xMq$
+- Value: multiply normalized weight with the initial embeddings of all other words in the sentence - $xMv$
+
+Matrices Mk, Mq, and Mv are the trainable parameters by the neural networks.
+
+<h3>Multihead Attention Module</h3>
+
+<h3>Position-Wise Feed-Forward Module</h3>
