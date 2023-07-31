@@ -40,3 +40,19 @@ This model eliminated the need for recurrence and convolution, which were the do
         <td>The absence of recurrence in transformer networks facilitates parallel computation. This means computations can occur concurrently at every step</td>
     </tr>
 </table>
+
+<h2>Attention Mechanism<h2>
+Attention Mechanism consists of following parts:
+<h3>1. Self-Attention Module<h3>
+Sentence is fed to a computer, and it considers each word as a token t, and each token has a word embedding V with shape [vocub_size, model_dimension]. But these word embeddings have no context. So the idea is to apply some kind of weighing or similarity to obtain final word embedding Y, which has more context than the initial embedding V.
+
+- first find the weights by multiplying (dot product) the initial embedding of the first word with the embedding of all other words in the sentence. 
+- nomralize these weights to have a sum of 1.
+- multiply the normalized weights with the initial embeddings of all the words in the sentence
+
+All weights will have the context of the first word. So when we are multiplying these weights to each word, we are essentially reweighing all the other words towards the first word. This is repeated for all words so that each word gets some context from every other word in the sentence.
+
+Weights are not trained, the order or proximity of the words have no influence on each other. Also, the process has no dependency on the length of the sentence, that is, more or fewer words in a sentence do not matter. This approach of adding some context to the words in a sentence is known as Self-Attention.
+
+- Multihead Attention Module
+- Position-Wise Feed-Forward Module
