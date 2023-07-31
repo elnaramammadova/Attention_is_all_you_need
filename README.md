@@ -61,12 +61,12 @@ Since weights are not trained, we utilize three other trainable parameters which
 Matrices Mk, Mq, and Mv are the trainable parameters by the neural networks.<br>
 
 ![image desc](./images/nn_attention.png)
-Figure 1. Neural network representation of Attention block (source: <a hred='https://towardsdatascience.com/all-you-need-to-know-about-attention-and-transformers-in-depth-understanding-part-1-552f0b41d021#4c16'>‘Attention’ and ‘Transformers’ — In-depth Understanding — Part 1</a>)
+Figure 1. Neural network representation of Attention block (source: <a href='https://towardsdatascience.com/all-you-need-to-know-about-attention-and-transformers-in-depth-understanding-part-1-552f0b41d021#4c16'>‘Attention’ and ‘Transformers’ — In-depth Understanding — Part 1</a>)
 
 <h3>Multihead Attention Module</h3>
 Let's take a more straightforward sentence as an example - "Anna reads books and she loves it". Here, if we consider the word 'reads', the words 'Anna', 'books', and 'she' should have a meaningful connection with 'reads'. These words indicate that Anna is the one who is involved in the activity of reading, she is female, and the objects of her reading activity are books. A solitary attention mechanism may struggle to accurately connect all these words to 'reads', suggesting that the deployment of three attention heads could be more effective in emphasizing the words associated with 'reads'. This approach lessens the burden on a single attention head to identify all the significant words, thereby enhancing the likelihood of more successfully recognizing the pertinent words.
 
 The keys, queries, and values undergo transformation through the addition of more linear layers. These layers are trained concurrently, maintaining distinct weights. As a result, each of the keys, queries, and values now yields three outputs, as opposed to just one. Consequently, three distinctive sets of weights are generated from these three keys and queries. Each weight set is then subjected to matrix multiplication with the respective values, leading to the creation of three unique outputs. These three attention outputs are ultimately fused together through concatenation, producing a single, final attention output. This process can be visualized as shown in Figure 2. <br>
 
-![image desc](./images/nn_attention.png)
-Figure 2. Neural network representation of Multihead Attention block (source: <a hred='https://towardsdatascience.com/all-you-need-to-know-about-attention-and-transformers-in-depth-understanding-part-1-552f0b41d021#4c16'>‘Attention’ and ‘Transformers’ — In-depth Understanding — Part 1</a>)
+![image desc](./images/nn_multihead.png)
+Figure 2. Neural network representation of Multihead Attention block (source: <a href='https://towardsdatascience.com/all-you-need-to-know-about-attention-and-transformers-in-depth-understanding-part-1-552f0b41d021#4c16'>‘Attention’ and ‘Transformers’ — In-depth Understanding — Part 1</a>)
