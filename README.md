@@ -16,7 +16,7 @@ The key idea behind the Transformer is the self-attention mechanism, which compu
 
 This model eliminated the need for recurrence and convolution, which were the dominant paradigms in the field up until then, and it allowed for much more parallelizable training, significantly reducing training times. It also improved the handling of long-term dependencies in text, a notorious difficulty with previous models.
 
-<h2>Challenges in RNN that Transformer models help overcome</h2>
+## Challenges in RNN that Transformer models help overcome
 
 <table>
   <tr>
@@ -47,7 +47,7 @@ This model eliminated the need for recurrence and convolution, which were the do
 </table>
 
 ## Attention Mechanism
-### 1. Self-Attention Module
+### Self-Attention Module
 Sentence is fed to a computer, and it considers each word as a token t, and each token has a word embedding V with shape [vocub_size, model_dimension]. But these word embeddings have no context. So the idea is to apply some kind of weighing or similarity to obtain final word embedding Y, which has more context than the initial embedding V.
 
 - first find the weights by multiplying (dot product) the initial embedding of the first word with the embedding of all other words in the sentence. 
