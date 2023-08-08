@@ -88,6 +88,6 @@ Join us in this fascinating journey as we explore the Transformer model, one lin
 
 [1] [Attention is All You Need](https://arxiv.org/abs/1706.03762)
 
-[2] [The Illustrated Transformer by Jay Alammar]([LINK_TO_ILLUSTRATED_TRANSFORMER](http://jalammar.github.io/illustrated-transformer/))
+[2] [The Illustrated Transformer by Jay Alammar](http://jalammar.github.io/illustrated-transformer/)
 
 [3] [Harvard’s NLP group guide with PyTorch implementation](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
